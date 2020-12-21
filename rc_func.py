@@ -1,5 +1,5 @@
 from functools import reduce
-from itertools import chain
+from itertools import takewhile, dropwhile, chain
 
 
 """
@@ -32,9 +32,12 @@ def l_map_indexed(f, *args):
 
 def l_print(xs, separator=", ", brackets="[]", end="\n"):
     if len(brackets) == 2:
-        print(brackets[0] + separator.join(map(lambda x: x.__str__(), xs)) + brackets[1], end=end)
-    else:
-        print(separator.join(map(lambda x: x.__str__(), xs)), end=end)
+        r = brackets[0] + separator.join(map(lambda x: x.__str__(), xs)) + brackets[1]
+        print(r, end=end)
+        return r
+    r = separator.join(map(lambda x: x.__str__(), xs))
+    print(r, end=end)
+    return r
 
 
 def reduce_r(f, xs, initial=None):
@@ -98,6 +101,14 @@ def l_filter_acc(f, xs, acc=None):
     return list(filter_acc(f, xs, acc))
 
 
+def l_takewhile(f, xs):
+    return list(takewhile(f, xs))
+
+
+def l_dropwhile(f, xs):
+    return list(dropwhile(f, xs))
+
+
 """
 None-handling
 """
@@ -123,6 +134,19 @@ Examples
 
 def prime_iter(n: int):
     return filter_acc(__is_prime_acc, range(2, n + 1))
+
+
+def __is_prime_acc(n: int, acc=None):
+    if acc is None:
+        acc = []
+    if n < 2:
+        return False, acc
+    for p in acc:
+        if p * p > n:
+            return True, acc + [n]
+        if n % p == 0:
+            return False, acc
+    return True, acc + [n]
 
 
 """
@@ -164,16 +188,3 @@ def __scan1(f, xs):
     for x in xs:
         fst = f(fst, x)
         yield fst
-
-
-def __is_prime_acc(n: int, acc=None):
-    if acc is None:
-        acc = []
-    if n < 2:
-        return False, acc
-    for p in acc:
-        if p * p > n:
-            return True, acc + [n]
-        if n % p == 0:
-            return False, acc
-    return True, acc + [n]
