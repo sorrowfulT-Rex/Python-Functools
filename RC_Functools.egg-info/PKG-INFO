@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
-Name: rc-func
-Version: 0.0.1
+Name: RC-Functools
+Version: 0.0.5
 Summary: Extended functional tools and None-handling for Python
 Home-page: https://github.com/sorrowfulT-Rex/Python-Functools
 Author: Sorrowful T-Rex

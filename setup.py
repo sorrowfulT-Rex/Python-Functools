@@ -4,8 +4,8 @@ with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="rc_func",
-    version="0.0.1",
+    name="RC_Functools",
+    version="0.0.5",
     author="Sorrowful T-Rex",
     author_email="yc4120@ic.ac.uk",
     description="Extended functional tools and None-handling for Python",
