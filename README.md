@@ -1,6 +1,6 @@
 # Accessibility
 
-Current Version: 0.05  
+Current Version: 0.0.5  
 Install with ```pip install RC-Functools```  
 ```from RC_Functools import rc_func``` to use  
 
