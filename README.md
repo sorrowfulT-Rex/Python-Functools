@@ -1,6 +1,5 @@
 # Accessibility
 
-<<<<<<< HEAD
 Current Version: 0.0.6  
 Install with ```pip install RC-Functools```  
 ```from RC_Functools import rc_func``` to use  
