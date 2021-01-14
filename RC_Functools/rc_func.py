@@ -30,13 +30,11 @@ def l_map_indexed(f, *args):
     return list(map_indexed(f, *args))
 
 
-def l_print(xs, separator=", ", brackets="[]", end="\n"):
+def l_str(xs, separator=", ", brackets="[]"):
     if len(brackets) == 2:
         r = brackets[0] + separator.join(map(lambda x: x.__str__(), xs)) + brackets[1]
-        print(r, end=end)
         return r
     r = separator.join(map(lambda x: x.__str__(), xs))
-    print(r, end=end)
     return r
 
 

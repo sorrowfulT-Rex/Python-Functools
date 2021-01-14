@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="RC_Functools",
-    version="0.0.5",
+    version="0.0.6",
     author="Sorrowful T-Rex",
     author_email="yc4120@ic.ac.uk",
     description="Extended functional tools and None-handling for Python",

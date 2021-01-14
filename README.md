@@ -1,6 +1,6 @@
 # Accessibility
 
-Current Version: 0.05  
+Current Version: 0.0.6  
 Install with ```pip install RC-Functools```  
 ```from RC_Functools import rc_func``` to use  
 
@@ -47,13 +47,11 @@ list(rc_func.map_indexed(lambda i, x: i + x, [2, 3, 4]))
 
 ## l_map_indexed(f, \*args)
 
-## l_print(xs, separator=", ", brackets="[]", end="\n")
+## l_str(xs, separator=", ", brackets="[]", end="\n")
 * Parameter xs takes an iterable;
 * Parameter separator takes a str;
 * Parameter brackets tkae a str;
-* Parameter end takes a str;
-* Prints each element of xs, separated by separator. If brackets contains two characters, then use them as brackets for the output.
-* Returns also the output
+* Returns the string consists of each element of xs, separated by separator. If brackets contains two characters, then use them as brackets for the output.
 ```
 list(rc_func.map_indexed(lambda i, x: i + x, [2, 3, 4]))
 # <0 + 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9>
